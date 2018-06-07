@@ -1,9 +1,3 @@
-angular.module("processStreetInterviewApplication", [])
+'use strict';
 
-.component("loader", {
-    templateUrl: "/js/components/loader/template.html"
-})
-
-.component("wistiaVideo", {
-    templateUrl: "/js/components/wistia-video/template.html"
-});
+var app = angular.module('processStreetInterviewApplication', ['wistiaVideoModule']);
