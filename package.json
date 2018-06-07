@@ -14,7 +14,7 @@
     "karma-coverage": "^1.1.2"
   },
   "scripts": {
-    "start": "npm install && cd public && bower install && node index.js",
+    "start": "npm install && cd public && bower install && cd .. && node index.js",
     "test": "karma start --singleRun"
   },
   "dependencies": {
