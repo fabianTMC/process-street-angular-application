@@ -13,7 +13,5 @@ angular.module("wistiaVideoModule", ['blueimp.fileupload'])
             url: 'https://upload.wistia.com/',
             acceptFileTypes: /(\.|\/)(mp4|mpg|mpeg)$/i
         };
-
-        $scope.queue = [{}];
     }
 });
