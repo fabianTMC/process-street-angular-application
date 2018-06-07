@@ -20,20 +20,21 @@
     </div>
 
     <div class="files">
-        <div data-ng-repeat="file in queue" data-ng-class="{'processing': file.$processing()}">
+        <div data-ng-repeat="file in queue">
             <!-- Embeded Wistia player -->
-            <div ng-if="file.$response().result.hashed_id">     
+            <div ng-if="file.$response().result.hashed_id">
                 <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
                     <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
                         <div class="wistia_embed wistia_async_{{file.$response().result.hashed_id}} videoFoam=true" style="height:100%;position:relative;width:100%">
                             <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                                <img src="https://fast.wistia.com/embed/medias/{{file.$response().result.hashed_id}}/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" onload="this.parentNode.style.opacity=1;" />
+                                <img src="https://fast.wistia.com/embed/medias/{{file.$response().result.hashed_id}}/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                    alt="" onload="this.parentNode.style.opacity=1;" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Thumbnail for the video -->
             <div data-ng-switch data-on="!!file.thumbnailUrl" ng-if="file.$state() != 'rejected' && !file.$response().result">
                 <div class="preview" data-ng-switch-when="true">
@@ -45,7 +46,8 @@
             </div>
 
             <!-- Progress bar -->
-            <progress ng-show="file.$state() == 'pending'" class="progress is-primary" value="{{file.$progress().loaded/file.$progress().total*100}}" max="100">
+            <progress ng-show="file.$state() == 'pending'" class="progress is-primary" value="{{file.$progress().loaded/file.$progress().total*100}}"
+                max="100">
                 Uploading {{file.$progress().loaded/file.$progress().total*100}}%...
             </progress>
 
@@ -59,18 +61,20 @@
                     <i class="fas fa-ban"></i>&nbsp;Cancel
                 </button>
             </div>
-            
+
             <!-- Error message -->
             <div data-ng-show="file.error" class="error has-text-danger">
                 <div data-ng-switch data-on="file.$response().jqXHR.status">
                     <div class="has-text-centered">
                         <i class="fas fa-3x fa-ban"></i>
                     </div>
+
                     <span data-ng-switch-when="401">The configured API password is invalid. This is a configuration issue and must be resolved by the development team. Please check back later.</span>
 
-                    <span data-ng-switch-default>{{file.$response().jqXHR.responseJSON.error || "A server error has occurred when trying to upload to Wistia. That's all we know"}}</div>
+                    <span data-ng-switch-default>{{file.$response().jqXHR.responseJSON.error || "A server error has occurred when trying to upload to Wistia. That's all we know"}}</span>
                 </div>
             </div>
+
         </div>
     </div>
 </form>

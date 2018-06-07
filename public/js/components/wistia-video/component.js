@@ -2,10 +2,6 @@
 
 angular.module("wistiaVideoModule", ['blueimp.fileupload'])
 
-.component("loader", {
-    templateUrl: "/js/components/loader/template.html"
-})
-
 .component("wistiaVideo", {
     templateUrl: "/js/components/wistia-video/template.html",
     controller: function($scope, WISTIA_API_PASSWORD) {
@@ -18,6 +14,6 @@ angular.module("wistiaVideoModule", ['blueimp.fileupload'])
             acceptFileTypes: /(\.|\/)(mp4|mpg|mpeg)$/i
         };
 
-       
+        $scope.queue = [{}];
     }
 });

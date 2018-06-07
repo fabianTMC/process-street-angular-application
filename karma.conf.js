@@ -15,8 +15,15 @@ module.exports = function(config) {
   
       // list of files / patterns to load in the browser
       files: [
+        "public/bower_components/jquery/dist/jquery.min.js",
         'public/bower_components/angular/angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
+        "https://blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js",
+        "https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js",
+        "public/bower_components/blueimp-file-upload/js/jquery.fileupload.js",
+        "public/bower_components/blueimp-file-upload/js/jquery.fileupload-process.js",
+        "public/bower_components/blueimp-file-upload/js/jquery.fileupload-video.js",
+        "public/bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js",
         'public/js/**/*.js',
         "public/js/**/*.html"
       ],
@@ -74,7 +81,7 @@ module.exports = function(config) {
   
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: ['Chrome'],
+      browsers: ['ChromeHeadless'],
   
   
       // Continuous Integration mode
