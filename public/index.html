@@ -7,9 +7,19 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="/css/beauty.css">
 
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://blueimp.github.io/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="/bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="/bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="/bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+
     <script src="/js/components/wistia-video/component.js"></script>
     <script src="/js/magic.js"></script>
+
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 </head>
 
 <body ng-app="processStreetInterviewApplication">
@@ -18,8 +28,6 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content">
-                        <loader></loader>
-
                         <wistia-video></wistia-video>
                     </div>
                 </div>

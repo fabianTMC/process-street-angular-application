@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "angular": "1.6.10",
-    "bulma": "0.7.1"
+    "blueimp-file-upload": "jQuery-File-Upload#^9.21.0",
+    "bulma": "0.7.1",
+    "jquery": "^3.3.1"
   }
 }
